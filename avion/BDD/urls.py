@@ -5,4 +5,5 @@ path('', views.index),
 path('ajouter/ba', views.ajout_ba),
 path('ajouter/es', views.ajout_es),
 path('ajouter/av', views.ajout_av),
+path('ajouter/avm', views.ajout_avm),
 ]

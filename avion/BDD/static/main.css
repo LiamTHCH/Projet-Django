@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 body {
     background: #333;
@@ -10,7 +11,7 @@ body {
 }
 h1 {
     font-size: 50px;
-    padding-left: 100px;
+    padding-left: 0px;
     color: #f1f1f1;
     text-align: center;
 }
@@ -103,12 +104,15 @@ a{
 #content{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
+    width: 75%;
+    margin: auto;
+    height: 98vh;
 }
 
-#content h1{flex-basis: 100%;
-    padding-bottom: 10px;
+#content h1{
+    padding-bottom: 30px;
 }
 
 
@@ -116,4 +120,5 @@ a{
 form{
     margin-left: 0vw;
     flex-basis: 100%;
+    text-align: center;
 }

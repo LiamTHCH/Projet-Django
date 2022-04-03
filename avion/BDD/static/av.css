@@ -1,0 +1,13 @@
+form{
+    width: 100%;
+    margin: auto;
+}
+
+
+form > *{
+    padding-bottom: 20px;
+}
+
+label{
+    color: ivory;
+}
