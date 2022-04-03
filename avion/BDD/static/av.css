@@ -11,3 +11,20 @@ form > *{
 label{
     color: ivory;
 }
+
+input{
+    width: auto;
+}
+
+.text_input{
+    margin: auto;
+    width: 100%;
+}
+
+input{
+    margin: auto;
+    width: 50%;
+    height: 30px;
+  min-width: 20ch;
+  max-width: 40ch;
+}
