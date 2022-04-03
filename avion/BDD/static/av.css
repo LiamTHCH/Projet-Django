@@ -23,8 +23,8 @@ input{
 
 input{
     margin: auto;
-    width: 50%;
+    width: 25%;
     height: 30px;
-  min-width: 20ch;
-  max-width: 40ch;
+  font-size: 1.5em;
+  font-family: inherit;
 }

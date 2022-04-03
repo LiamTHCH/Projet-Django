@@ -51,8 +51,14 @@ def ajout_av(request):
     if request.method == 'POST':
         form = AV(request.POST)
         if form.is_valid():
-            temp = form.cleaned_data.get("base")
-            print(temp)
+           # print(int(form.cleaned_data.get("base")[0]))
+           # print(models.Base.objects.get(id=int(form.cleaned_data.get("base")[0])))
+           # print(form.cleaned_data.get("code_avion"))
+           # print(models.Escadron.objects.get(id=int(form.cleaned_data.get("escadron")[0])))
+           # print(models.AvionModele.objects.get(id=int(form.cleaned_data.get("modele")[0])))
+           # print(form.cleaned_data.get("date"))
+            temp = models.Avion(base=models.Base.objects.get(id=int(form.cleaned_data.get("base")[0])),code_avion=form.cleaned_data.get("code_avion"),escadron=models.Escadron.objects.get(id=int(form.cleaned_data.get("escadron")[0])),modele=models.AvionModele.objects.get(id=int(form.cleaned_data.get("modele")[0])),date_service=form.cleaned_data.get("date"))
+            temp.save()
             return HttpResponseRedirect('/')
     else:
         form = AV()
