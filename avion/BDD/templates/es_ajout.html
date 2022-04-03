@@ -2,10 +2,10 @@
 {% extends "main.html" %} 
 
     {% block title %}
-    Ajouter Base aérienne
+    Ajouter Escadron
     {% endblock %}
     {% block content %}
-    <form action="/ajouter/ba" method="post">
+    <form action="/ajouter/es" method="post">
     {% csrf_token %}
     {{ form.as_table }}
     <input type="submit" value="envoyer"/>

@@ -21,72 +21,46 @@
                 <img src="ressources/carnet.svg" alt="icone" class="icone">
                 <p class="txt-liste">Base</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t1">Bases   aériennes</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
+                    <li class="titre-sous-liste t1">Bases aériennes</li>
+                    {% for base in BA %}
+                        <li class="liste-items"><a href="/ba/{{base.id}}">{{base.num}}  {{base.nom}}</a></li>
+                    {% endfor %}
                     <li class="liste-items"><a href="/ajouter/ba">AJOUTER</a></li>
                 </ul>
             </li>
             <li class="items">
                 <img src="ressources/algolia-brands.svg" alt="icone" class="icone">
-                <p class="txt-liste">Chrono</p>
+                <p class="txt-liste">Escadron</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t2">Le Titre</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
+                    <li class="titre-sous-liste t2">Escadron</li>
+                    {% for escadre in ES %}
+                        <li class="liste-items"><a href="/es/{{escadre.id}}">{{escadre.nom}}</a></li>
+                    {% endfor %}
+
+                    <li class="liste-items"><a href="/ajouter/es">AJOUTER</a></li>
                 </ul>
             </li>
             <li class="items">
                 <img src="ressources/backward-solid.svg" alt="icone" class="icone">
-                <p class="txt-liste">Rewind</p>
+                <p class="txt-liste">Avion</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t3">Le Titre</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    
+                    <li class="titre-sous-liste t3">Avion</li>
+                    {% for avion in AV %}
+                    <li class="liste-items"><a href="/av/{{avion.id}}">{{avion.code_avion}}</a></li>
+                    {% endfor %}
+                    <li class="liste-items"><a href="/ajouter/av">AJOUTER</a></li>
 
                 </ul>
             </li>
             <li class="items">
                 <img src="ressources/justice.svg" alt="icone" class="icone">
-                <p class="txt-liste">Justice</p>
+                <p class="txt-liste">Modele</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t4">Le Titre</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                </ul>
-            </li>
-            <li class="items">
-                <img src="ressources/book-solid.svg" alt="icone" class="icone">
-                <p class="txt-liste">Book</p>
-                <ul class="sous-liste">
-                    <li class="titre-sous-liste t5">Le Titre</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
-                    <li class="liste-items">lorem ipsum</li>
+                    <li class="titre-sous-liste t4">Modele Avion</li>
+                    {% for avm in AVM %}
+                    <li class="liste-items"><a href="/avm/{{avm.id}}">{{avm.nom}}</a></li>
+                    {% endfor %}
+                    <li class="liste-items"><a href="/ajouter/avm">AJOUTER</a></li>
                 </ul>
             </li>
 
@@ -96,11 +70,7 @@
     <div id="content">
         {% block content %}
         <h1> Accueil </h1>
-        <div>
-
-        </div>
-
-
         {% endblock %}
+    </div>
 </body>
 </html>

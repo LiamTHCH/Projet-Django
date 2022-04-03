@@ -11,3 +11,24 @@ class BA(ModelForm):
         'ville' : _('Ville') ,
         'num' : _('Num')
         }
+
+class ES(ModelForm):
+    class Meta:
+        model = models.Escadron
+        fields = ('nom',)
+        labels = {
+        'nom' : _("Nom de l'escadron")
+        }
+
+
+
+class AVM(ModelForm):
+    class Meta:
+        model = models.AvionModele
+        fields = ('nom',)
+        labels = {
+        'nom' : _("Nom du modéle")
+        }
+
+class AV(forms.Form):
+    base = forms.MultipleChoiceField(choices=[(c.id, str(c.nom+" "+str(c.num))) for c in models.Base.objects.all()])
