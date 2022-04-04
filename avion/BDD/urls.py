@@ -11,5 +11,6 @@ path('show/ba/<int:id>',views.show_ba_id),
 path('del/ba/<int:id>',views.del_ba),
 path('show/es', views.show_es),
 path('show/es/<int:id>',views.show_es_id),
-path('del/es/<int:id>',views.del_es)
+path('del/es/<int:id>',views.del_es),
+path('show/av', views.show_av),
 ]

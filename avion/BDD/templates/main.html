@@ -15,10 +15,10 @@
         <ul class="liste">
 
             <li class="items">
-                <p class="txt-liste"><a href="">Accueil</a></p>
+                <p class="txt-liste"><a href="/">Accueil</a></p>
             </li>
             <li class="items">
-                <img src="ressources/carnet.svg" alt="icone" class="icone">
+                <img src="{% static 'locate.svg' %}" alt="icone" class="icone">
                 <p class="txt-liste">Base</p>
                 <ul class="sous-liste">
                     <a href="/show/ba"><li class="titre-sous-liste t1">Bases aériennes</li></a>
@@ -29,19 +29,19 @@
                 </ul>
             </li>
             <li class="items">
-                <img src="ressources/algolia-brands.svg" alt="icone" class="icone">
+                <img src="{% static 'patch.svg' %}" alt="icone" class="icone">
                 <p class="txt-liste">Escadron</p>
                 <ul class="sous-liste">
                     <a href="/show/es"><li class="titre-sous-liste t2">Escadron</li></a>
                     {% for escadre in ES %}
-                        <li class="liste-items"><a href="/es/{{escadre.id}}">{{escadre.nom}}</a></li>
+                        <li class="liste-items"><a href="/show/es/{{escadre.id}}">{{escadre.nom}}</a></li>
                     {% endfor %}
 
                     <li class="liste-items"><a href="/ajouter/es">AJOUTER</a></li>
                 </ul>
             </li>
             <li class="items">
-                <img src="ressources/backward-solid.svg" alt="icone" class="icone">
+                <img src="{% static 'avion.svg' %}" alt="icone" class="icone">
                 <p class="txt-liste">Avion</p>
                 <ul class="sous-liste">
                     <li class="titre-sous-liste t3">Avion</li>
@@ -53,7 +53,7 @@
                 </ul>
             </li>
             <li class="items">
-                <img src="ressources/justice.svg" alt="icone" class="icone">
+                <img src="{% static 'blueprint.svg' %}" alt="icone" class="icone">
                 <p class="txt-liste">Modele</p>
                 <ul class="sous-liste">
                     <li class="titre-sous-liste t4">Modele Avion</li>
