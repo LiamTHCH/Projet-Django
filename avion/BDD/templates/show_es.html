@@ -1,0 +1,17 @@
+{% extends "main.html" %} 
+{% block title %}
+Tout les Base:
+{% endblock %}
+
+{% block content %}
+    {% for escadron in ES %}
+        <div class="show_block">
+            <h2><a href="/show/es/{{escadron.id}}">{{escadron.nom}}</a></h2>
+            {% for avion in AV %}
+            {% if avion.escadron == escadron %}
+                <p>{{avion.code_avion}}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}

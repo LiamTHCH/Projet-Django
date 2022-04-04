@@ -1,0 +1,49 @@
+{% extends "main.html" %} 
+{% block title %}
+Tout les Base:
+{% endblock %}
+
+{% block content %}
+    {% for escadron in ES %}
+        {% if escadron.id == ID %}
+        <div class="TITRE">
+            <h1>Escadron {{escadron.nom}}</h1>
+            <a href="/del/es/{{escadron.id}}">Supprimer</a>
+        </div>
+        <div class="show_block">
+        <table class="table is-fullwidth is-hoverable">
+        <thead>
+            <tr>
+                <th>Code Avion</th>
+                <th>Modele</th>
+                <th>Base</th>
+                <th>Date de Mise en Service</th>
+              </tr>
+        </thead>
+        <tbody>
+            {% for avion in AV %}
+            {% if avion.escadron == escadron %}
+            <tr>
+                <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
+                {% for modele in AVM %}
+                {% if avion.modele == modele %}
+                <td><a href="/show/avm/{{modele.id}}">{{avion.modele}}</a></td>
+                {% endif %}
+                {% endfor %}
+                
+                {% for base in BA %}
+                {% if avion.base == base %}
+                <td><a href="/show/ba/{{base.id}}">{{avion.base}}</a></td>
+                {% endif %}
+                {% endfor %}
+
+                <td>{{avion.date_service}}</td>
+              </tr>
+            </tbody>
+            {% endif %}
+            {% endfor %}
+        </table>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

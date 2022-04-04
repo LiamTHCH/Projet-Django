@@ -17,6 +17,8 @@ class Base(models.Model):
     nom = models.CharField(max_length=30,null=True)
     ville = models.CharField(max_length=30,null=True)
     num = models.IntegerField(max_length=5,null=True)
+    def __str__(self):
+        return str(str(self.num) + " " + str(self.nom))
 
 class Avion(models.Model):
     modele = models.ForeignKey(AvionModele, on_delete=models.CASCADE)

@@ -15,7 +15,7 @@
         <ul class="liste">
 
             <li class="items">
-                <p class="txt-liste"><a href="/">Accueil</a></p>
+                <p class="txt-liste"><a href="">Accueil</a></p>
             </li>
             <li class="items">
                 <img src="ressources/carnet.svg" alt="icone" class="icone">
@@ -23,7 +23,7 @@
                 <ul class="sous-liste">
                     <a href="/show/ba"><li class="titre-sous-liste t1">Bases aériennes</li></a>
                     {% for base in BA %}
-                        <li class="liste-items"><a href="/ba/{{base.id}}">{{base.num}}  {{base.nom}}</a></li>
+                        <li class="liste-items"><a href="/show/ba/{{base.id}}">{{base.num}}  {{base.nom}}</a></li>
                     {% endfor %}
                     <li class="liste-items"><a href="/ajouter/ba">AJOUTER</a></li>
                 </ul>
@@ -32,7 +32,7 @@
                 <img src="ressources/algolia-brands.svg" alt="icone" class="icone">
                 <p class="txt-liste">Escadron</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t2">Escadron</li>
+                    <a href="/show/es"><li class="titre-sous-liste t2">Escadron</li></a>
                     {% for escadre in ES %}
                         <li class="liste-items"><a href="/es/{{escadre.id}}">{{escadre.nom}}</a></li>
                     {% endfor %}
