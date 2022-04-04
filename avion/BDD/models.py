@@ -5,9 +5,13 @@ from django.db import models
 
 class AvionModele(models.Model):
     nom = models.CharField(max_length=30,null=True)
+    def __str__(self):
+        return self.nom
 
 class Escadron(models.Model):
     nom =  models.CharField(max_length=30,null=True)
+    def __str__(self):
+        return self.nom
     
 class Base(models.Model):
     nom = models.CharField(max_length=30,null=True)

@@ -78,3 +78,32 @@ def ajout_avm(request):
     else:
         form = AVM()
     return render(request, 'avm_ajout.html', {'form': form,"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm})
+
+
+
+def show_ba(request):
+    ba = models.Base.objects.all()
+    es = models.Escadron.objects.all() 
+    av = models.Avion.objects.all()
+    avm =  models.AvionModele.objects.all()
+    return render(request, 'show_ba.html', {"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm})
+
+
+
+def show_ba_id(request,id):
+    ba = models.Base.objects.all()
+    es = models.Escadron.objects.all() 
+    av = models.Avion.objects.all()
+    avm =  models.AvionModele.objects.all()
+    return render(request, 'show_ba_id.html', {"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm,'ID':id})
+
+
+
+def del_ba(request,id):
+    ba = models.Base.objects.all()
+    es = models.Escadron.objects.all() 
+    av = models.Avion.objects.all()
+    avm =  models.AvionModele.objects.all()
+    instance = models.Base.objects.get(id=id)
+    instance.delete()
+    return HttpResponseRedirect('/show/ba')

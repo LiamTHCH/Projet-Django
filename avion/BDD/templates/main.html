@@ -21,7 +21,7 @@
                 <img src="ressources/carnet.svg" alt="icone" class="icone">
                 <p class="txt-liste">Base</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t1">Bases aériennes</li>
+                    <a href="/show/ba"><li class="titre-sous-liste t1">Bases aériennes</li></a>
                     {% for base in BA %}
                         <li class="liste-items"><a href="/ba/{{base.id}}">{{base.num}}  {{base.nom}}</a></li>
                     {% endfor %}

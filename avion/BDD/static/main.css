@@ -105,15 +105,12 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     width: 75%;
     margin: auto;
     height: 98vh;
 }
 
-#content h1{
-    padding-bottom: 30px;
-}
 
 
 
@@ -122,3 +119,40 @@ form{
     flex-basis: 100%;
     text-align: center;
 }
+
+
+.show_block{
+    border-style: solid;
+    border-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 40px;
+}
+
+.TITRE{
+    margin-right: 40px;
+}
+.TITRE h1{ 
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.TITRE a {
+    padding-top: 40px;
+}
+
+#content h1{
+    flex-grow: 100%;
+    flex-basis: 1;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+    padding: 10px;
+    text-align: center;
+  }
