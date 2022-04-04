@@ -124,3 +124,13 @@ def show_es_id(request,id):
     av = models.Avion.objects.all()
     avm =  models.AvionModele.objects.all()
     return render(request, 'show_es_id.html', {"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm,'ID':id})
+
+
+def del_es(request,id):
+    ba = models.Base.objects.all()
+    es = models.Escadron.objects.all() 
+    av = models.Avion.objects.all()
+    avm =  models.AvionModele.objects.all()
+    instance = models.Escadron.objects.get(id=id)
+    instance.delete()
+    return HttpResponseRedirect('/show/es')
