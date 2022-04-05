@@ -44,7 +44,7 @@
                 <img src="{% static 'avion.svg' %}" alt="icone" class="icone">
                 <p class="txt-liste">Avion</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t3">Avion</li>
+                    <a href="/show/av"><li class="titre-sous-liste t3">Avion</li></a>
                     {% for avion in AV %}
                     <li class="liste-items"><a href="/av/{{avion.id}}">{{avion.code_avion}}</a></li>
                     {% endfor %}
