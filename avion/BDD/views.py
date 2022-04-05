@@ -134,3 +134,11 @@ def del_es(request,id):
     instance = models.Escadron.objects.get(id=id)
     instance.delete()
     return HttpResponseRedirect('/show/es')
+
+
+def show_av(request):
+    ba = models.Base.objects.all()
+    es = models.Escadron.objects.all() 
+    av = models.Avion.objects.all()
+    avm =  models.AvionModele.objects.all()
+    return render(request, 'show_av.html', {"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm})

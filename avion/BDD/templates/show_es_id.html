@@ -26,12 +26,18 @@ Tout les Base:
             <tr>
                 <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
                 {% for modele in AVM %}
+                {% if avion.modele == NULL %}
+                <td>∅</td>
+                {% endif %}
                 {% if avion.modele == modele %}
                 <td><a href="/show/avm/{{modele.id}}">{{avion.modele}}</a></td>
                 {% endif %}
                 {% endfor %}
                 
                 {% for base in BA %}
+                {% if avion.base == NULL %}
+                <td>∅</td>
+                {% endif %}
                 {% if avion.base == base %}
                 <td><a href="/show/ba/{{base.id}}">{{avion.base}}</a></td>
                 {% endif %}

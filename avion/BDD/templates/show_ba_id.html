@@ -23,25 +23,30 @@ Tout les Base:
         </thead>
         <tbody>
             {% for avion in AV %}
-            {% if avion.base == base %}
-            <tr>
-                <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
-                {% for modele in AVM %}
-                {% if avion.modele == modele %}
-                <td><a href="/show/avm/{{modele.id}}">{{avion.modele}}</a></td>
-                {% endif %}
-                {% endfor %}
-                
-                {% for escadron in ES %}
-                {% if avion.escadron == escadron %}
-                <td><a href="/show/avm/{{escadron.id}}">{{avion.escadron}}</a></td>
-                {% endif %}
-                {% endfor %}
+                {% if avion.base == base %}
+                <tr>
+                    <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
+                    {% for modele in AVM %}
+                        {% if avion.modele == NULL %}
+                        <td>∅</td>
+                        {% endif %}
+                        {% if avion.modele == modele %}
+                        <td><a href="/show/avm/{{modele.id}}">{{avion.modele}}</a></td>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    {% for escadron in ES %}
+                        {% if avion.escadron == escadron %}
+                        <td><a href="/show/avm/{{escadron.id}}">{{avion.escadron}}</a></td>
+                        {% else %}
+                        <td>∅</td>
+                        {% endif %}
+                    {% endfor %}
 
-                <td>{{avion.date_service}}</td>
-              </tr>
-            </tbody>
-            {% endif %}
+                    <td>{{avion.date_service}}</td>
+                </tr>
+                </tbody>
+                {% endif %}
             {% endfor %}
         </table>
         </div>

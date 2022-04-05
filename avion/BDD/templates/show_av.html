@@ -1,0 +1,53 @@
+{% extends "main.html" %} 
+{% block title %}
+Tout les Avions
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<table class="table is-fullwidth is-hoverable sortable" >
+    <thead>
+        <tr>
+            <th>Code Avion</th>
+            <th>Modele</th>
+            <th>Base</th>
+            <th>Escadron</th>
+            <th>Date de Mise en Service</th>
+          </tr>
+    </thead>
+    {% for avion in AV %}
+    <tr>
+        <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
+        {% for modele in AVM %}
+        {% if avion.modele == NULL %}
+        <td>∅</td>
+        {% endif %}
+        {% if avion.modele == modele %}
+        <td><a href="/show/avm/{{modele.id}}">{{avion.modele}}</a></td>
+        {% endif %}
+        {% endfor %}
+        
+        {% for base in BA %}
+        {% if avion.base == NULL %}
+        <td>∅</td>
+        {% endif %}
+        {% if avion.base == base %}
+        <td><a href="/show/ba/{{base.id}}">{{avion.base}}</a></td>
+        {% endif %}
+        {% endfor %}
+
+        {% for escadron in ES %}
+        {% if avion.escadron == escadron %}
+        <td><a href="/show/avm/{{escadron.id}}">{{avion.escadron}}</a></td>
+        {% else %}
+        <td>∅</td>
+        {% endif %}
+    {% endfor %}
+
+        <td>{{avion.date_service}}</td>
+      </tr>
+    </tbody>
+
+    {% endfor %}
+{% endblock %}
