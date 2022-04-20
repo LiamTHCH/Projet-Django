@@ -1,0 +1,69 @@
+
+{% extends "main.html" %} 
+
+{% block title %}
+Ajouter Escadron
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<h1> Accueil </h1>
+<div class="barinfo">
+    <h2> {{TTAV}} Avions </h2>
+    <h2> {{TTAVM}} Modele d'avions </h2>
+    <h2> {{TTES}} Escadrons </h2>
+    <h2> {{TTBA}} Bases </h2>
+</div>
+
+
+<table class="table is-fullwidth is-hoverable sortable" >
+    <thead>
+        <tr>
+            <th>Code Avion</th>
+            <th>Modele</th>
+            <th>Base</th>
+            <th>Escadron</th>
+            <th>Date de Mise en Service</th>
+            <th>Editer</th>
+            <th>Supprimer</th>
+          </tr>
+    </thead>
+    {% for avion in AV %}
+    <tr>
+        <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
+        {% for modele in AVM %}
+        {% if avion.modele == NULL %}
+        <td>∅</td>
+        {% endif %}
+        {% if avion.modele == modele %}
+        <td><a href="/show/avm/{{modele.id}}">{{avion.modele}}</a></td>
+        {% endif %}
+        {% endfor %}
+        
+        {% for base in BA %}
+        {% if avion.base == NULL %}
+        <td>∅</td>
+        {% endif %}
+        {% if avion.base == base %}
+        <td><a href="/show/ba/{{base.id}}">{{avion.base}}</a></td>
+        {% endif %}
+        {% endfor %}
+
+        {% for escadron in ES %}
+        {% if avion.escadron == escadron %}
+        <td><a href="/show/es/{{escadron.id}}">{{avion.escadron}}</a></td>
+        {% else %}
+        {% if avion.escadron == NULL %}
+        <td>∅</td>
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+
+        <td>{{avion.date_service}}</td>
+        <td><a href="/up/av/{{avion.id}}"><img src="{% static 'edit-svgrepo-com.svg' %}" alt="icone" class="icone"></a></td>
+        <td><a href="/del/av/{{avion.id}}"><img src="{% static 'delete-svgrepo-com.svg' %}" alt="icone" class="icone"></a></td>
+      </tr>
+    </tbody>
+
+    {% endfor %}
+{% endblock %}

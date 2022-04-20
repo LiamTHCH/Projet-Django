@@ -9,7 +9,11 @@ def index(request):
     es = models.Escadron.objects.all() 
     av = models.Avion.objects.all() 
     avm =  models.AvionModele.objects.all()
-    return render(request, 'main.html',{"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm})
+    ttav = len(av)
+    ttba = len(ba)
+    ttes = len(es)
+    ttavm = len(avm)
+    return render(request, 'acc_av.html',{"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm,"TTBA": ttba,"TTAV": ttav,"TTES": ttes,"TTAVM": ttavm})
 
 
 def ajout_ba(request):
