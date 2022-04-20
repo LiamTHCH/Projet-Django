@@ -13,4 +13,12 @@ path('show/es', views.show_es),
 path('show/es/<int:id>',views.show_es_id),
 path('del/es/<int:id>',views.del_es),
 path('show/av', views.show_av),
+path('show/av/<int:id>',views.show_av_id),
+path('up/es/<int:id>',views.update_es),
+path('up/ba/<int:id>',views.update_ba),
+path('show/avm', views.show_avm),
+path('show/avm/<int:id>',views.show_avm_id),
+path('up/avm/<int:id>',views.update_avm),
+path('del/av/<int:id>',views.del_av),
+path('up/av/<int:id>',views.update_av)
 ]

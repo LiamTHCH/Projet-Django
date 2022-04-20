@@ -1,38 +1,37 @@
 {% extends "main.html" %} 
 {% block title %}
-Tout les Base:
+Modele Avion
 {% endblock %}
 
 {% block content %}
-    {% for base in BA %}
-        {% if base.id == ID %}
+    {% for modele in AVM %}
+        {% if modele.id == ID %}
         <div class="TITRE">
-            <h1>Base {{base.num}} {{base.nom}}</h1>
-            <p>Ville : {{base.ville}}</p>
-            <p><a href="/del/ba/{{base.id}}">Supprimer</a></p>
-            <p><a href="/up/ba/{{base.id}}">EDITER</a></p>
+            <h1>{{modele.nom}}</h1>
+            <p><a href="/del/avm/{{modele.id}}">Supprimer</a></p>
+            <p><a href="/up/avm/{{modele.id}}">EDITER</a></p>
         </div>
         <div class="show_block">
         <table class="table is-fullwidth is-hoverable">
         <thead>
             <tr>
                 <th>Code Avion</th>
-                <th>Modele</th>
+                <th>Base</th>
                 <th>Escadron</th>
                 <th>Date de Mise en Service</th>
               </tr>
         </thead>
         <tbody>
             {% for avion in AV %}
-                {% if avion.base == base %}
+                {% if avion.modele == modele %}
                 <tr>
                     <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
-                    {% for modele in AVM %}
-                        {% if avion.modele == NULL %}
+                    {% for base in BA %}
+                        {% if avion.base == NULL %}
                         <td>∅</td>
                         {% endif %}
-                        {% if avion.modele == modele %}
-                        <td><a href="/show/avm/{{modele.id}}">{{avion.modele}}</a></td>
+                        {% if avion.base == base %}
+                        <td><a href="/show/ba/{{base.id}}">{{avion.modele}}</a></td>
                         {% endif %}
                     {% endfor %}
                     

@@ -46,7 +46,7 @@
                 <ul class="sous-liste">
                     <a href="/show/av"><li class="titre-sous-liste t3">Avion</li></a>
                     {% for avion in AV %}
-                    <li class="liste-items"><a href="/av/{{avion.id}}">{{avion.code_avion}}</a></li>
+                    <li class="liste-items"><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></li>
                     {% endfor %}
                     <li class="liste-items"><a href="/ajouter/av">AJOUTER</a></li>
 
@@ -56,9 +56,9 @@
                 <img src="{% static 'blueprint.svg' %}" alt="icone" class="icone">
                 <p class="txt-liste">Modele</p>
                 <ul class="sous-liste">
-                    <li class="titre-sous-liste t4">Modele Avion</li>
+                    <a href="/show/avm"><li class="titre-sous-liste t4">Modele Avion</li></a>
                     {% for avm in AVM %}
-                    <li class="liste-items"><a href="/avm/{{avm.id}}">{{avm.nom}}</a></li>
+                    <li class="liste-items"><a href="/show/avm/{{avm.id}}">{{avm.nom}}</a></li>
                     {% endfor %}
                     <li class="liste-items"><a href="/ajouter/avm">AJOUTER</a></li>
                 </ul>

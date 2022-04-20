@@ -19,6 +19,7 @@ Tout les Avions
           </tr>
     </thead>
     {% for avion in AV %}
+    {% if avion.id == ID %}
     <tr>
         <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
         {% for modele in AVM %}
@@ -43,9 +44,7 @@ Tout les Avions
         {% if avion.escadron == escadron %}
         <td><a href="/show/avm/{{escadron.id}}">{{avion.escadron}}</a></td>
         {% else %}
-        {% if avion.escadron == NULL %}
         <td>∅</td>
-        {% endif %}
         {% endif %}
     {% endfor %}
 
@@ -54,6 +53,6 @@ Tout les Avions
         <td><a href="/del/av/{{avion.id}}"><img src="{% static 'delete-svgrepo-com.svg' %}" alt="icone" class="icone"></a></td>
       </tr>
     </tbody>
-
+    {% endif %}
     {% endfor %}
 {% endblock %}

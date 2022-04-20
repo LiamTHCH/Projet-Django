@@ -1,0 +1,17 @@
+{% extends "main.html" %} 
+{% block title %}
+Tout les Base:
+{% endblock %}
+
+{% block content %}
+    {% for modele in AVM %}
+        <div class="show_block">
+            <h2><a href="/show/avm/{{modele.id}}">{{modele.nom}}</a></h2>
+            {% for avion in AV %}
+            {% if avion.modele == modele %}
+                <p>{{avion.code_avion}}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}

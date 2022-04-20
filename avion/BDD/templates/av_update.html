@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'select.css' %}">
     <link rel="stylesheet" href="{% static 'av.css' %}">
     <h1>Ajouter Avion</h1>
-    <form action="/ajouter/av" method="post">
+    <form action="/up/av/{{ID}}" method="post">
     {% csrf_token %}
     {{ form.modele.label_tag }}
     <div class="select select--multiple">
