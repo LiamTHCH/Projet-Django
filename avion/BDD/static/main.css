@@ -139,7 +139,7 @@ form{
     padding-bottom: 0px;
 }
 .TITRE a {
-    padding-top: 40px;
+    padding-top: 5px;
 }
 
 #content h1{
@@ -150,6 +150,7 @@ form{
 table{
     border-collapse: collapse;
     width: 100%;
+    overflow: scroll;
 }
 
 td, th {
@@ -165,6 +166,7 @@ td, th {
       flex-direction: row;
       justify-content: space-between;
       width: 75%;
+      margin-bottom: 20px;
 }
 
 .barinfo h2{
@@ -179,6 +181,51 @@ td, th {
         flex-direction: column;
         justify-content: space-between;
         width: 75%;
+        
+  }
+  #content{
+      margin-right: 5%;
   }
     
     }
+
+
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #0087ca;
+      }
+      
+      .hover-underline-animation:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #0087ca;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      
+      .hover-underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+
+      @media screen and (max-width: 600px) {
+        table thead {
+          display: none;
+        }  table td {
+          display: flex;
+        }
+        
+        table td::before {
+          content: attr(label);
+          font-weight: bold;
+          width: 120px;
+          min-width: 120px;
+        }
+      }

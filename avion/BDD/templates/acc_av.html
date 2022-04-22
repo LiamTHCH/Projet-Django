@@ -2,7 +2,7 @@
 {% extends "main.html" %} 
 
 {% block title %}
-Ajouter Escadron
+Accueil
 {% endblock %}
 {% block content %}
 {% load static %}
@@ -28,6 +28,7 @@ Ajouter Escadron
             <th>Supprimer</th>
           </tr>
     </thead>
+    <tbody>
     {% for avion in AV %}
     <tr>
         <th><a href="/show/av/{{avion.id}}">{{avion.code_avion}}</a></th>
@@ -64,6 +65,18 @@ Ajouter Escadron
         <td><a href="/del/av/{{avion.id}}"><img src="{% static 'delete-svgrepo-com.svg' %}" alt="icone" class="icone"></a></td>
       </tr>
     </tbody>
-
+    <script>
+        window.setMobileTable = function(selector) {
+  // if (window.innerWidth > 600) return false;
+  const tableEl = document.querySelector(selector);
+  const thEls = tableEl.querySelectorAll('thead th');
+  const tdLabels = Array.from(thEls).map(el => el.innerText);
+  tableEl.querySelectorAll('tbody tr').forEach( tr => {
+    Array.from(tr.children).forEach( 
+      (td, ndx) =>  td.setAttribute('label', tdLabels[ndx])
+    );
+  });
+}
+    </script>
     {% endfor %}
 {% endblock %}

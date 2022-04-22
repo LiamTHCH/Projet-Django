@@ -49,7 +49,7 @@ Tout les Avions
     {% endfor %}
 
         <td>{{avion.date_service}}</td>
-        <td><a href="/up/av/{{avion.id}}"><img src="{% static 'edit-svgrepo-com.svg' %}" alt="icone" class="icone"></a></td>
+        <td><a href="/up/av/{{avion.id}}" ><img src="{% static 'edit-svgrepo-com.svg' %}" alt="icone" class="icone"></a></td>
         <td><a href="/del/av/{{avion.id}}"><img src="{% static 'delete-svgrepo-com.svg' %}" alt="icone" class="icone"></a></td>
       </tr>
     </tbody>
