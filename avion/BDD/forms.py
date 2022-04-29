@@ -37,6 +37,6 @@ class AV(forms.Form):
     code_avion = forms.CharField()
     escadron = forms.MultipleChoiceField(choices=[(c.id, str(c.nom)) for c in models.Escadron.objects.all()])
     base = forms.MultipleChoiceField(choices=[(c.id, str(c.nom+" "+str(c.num))) for c in models.Base.objects.all()])
-    date = forms.DateField(widget=NumberInput(attrs={'type': 'date'}))
+    date = forms.DateField(widget=NumberInput(attrs={'type': 'date','id':'datepick'}))
     
 

@@ -1,7 +1,7 @@
 {% extends "main.html" %} 
 
     {% block title %}
-    Ajouter Avion
+    Modifier Avion
     {% endblock %}
     {% block content %}
     {% load static %}
@@ -38,7 +38,8 @@
 
     <div class="text_input">
     {{ form.date.label_tag }}
-     <div id="datepicker" >{{ form.date }}</div>
+    <p id="dateid">{{date}}</p>
+     <div id="datepicker">{{ form.date }}</div>
     </div>
 
 
@@ -48,10 +49,27 @@
    
    
      <script>
-       let dateControl = document.querySelector('input[type="date"]');
+      let dateControl = document.querySelector('input[type="date"]');
       dateControl.value = new Date();
       console.log(dateControl.value); // affiche "2017-06-01"
       console.log(dateControl.valueAsNumber); // affiche 1496275200000, un timestamp JavaScript (exprimé en ms)
+      let date = document.getElementById("dateid").textContent;
+      ddateimport= new Date(date);
+      document.getElementById("datepick").value = formatDate(ddateimport);
+      console.log(ddateimport);
+
+      function padTo2Digits(num) {
+  return num.toString().padStart(2, '0');
+}
+
+      function formatDate(date) {
+        return [
+          padTo2Digits(date.getFullYear()),
+          padTo2Digits(date.getMonth() + 1),
+          date.getDate(),
+        ].join('-');
+      }
+      console.log(formatDate(new Date()));
 
      </script>
    

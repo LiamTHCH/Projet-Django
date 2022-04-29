@@ -247,6 +247,10 @@ def update_av(request,id):
     avm =  models.AvionModele.objects.all()
     instance = models.Avion.objects.get(id=id)
     data = model_to_dict(instance)
+    print(data["date_service"])
+    print(data["date_service"].strftime("%Y-%m-%d"))
+    data["date_service"] = data["date_service"].strftime("%Y-%m-%d")
+    print(data)
     form = AV(initial=data)
     if request.method == 'POST':
         form = AV(request.POST,initial=data)
@@ -255,4 +259,4 @@ def update_av(request,id):
             temp.id = id
             temp.save()
             return HttpResponseRedirect('/show/av')
-    return render(request, 'av_update.html', {'form': form,"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm,'ID':id})
+    return render(request, 'av_update.html', {'form': form,"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm,'ID':id,'date':data["date_service"]})
