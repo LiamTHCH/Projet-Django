@@ -229,3 +229,8 @@ td, th {
           min-width: 120px;
         }
       }
+
+
+#dateid{
+    visibility: hidden;
+}

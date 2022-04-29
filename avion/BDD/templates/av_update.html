@@ -51,8 +51,8 @@
      <script>
       let dateControl = document.querySelector('input[type="date"]');
       dateControl.value = new Date();
-      console.log(dateControl.value); // affiche "2017-06-01"
-      console.log(dateControl.valueAsNumber); // affiche 1496275200000, un timestamp JavaScript (exprimé en ms)
+      console.log(dateControl.value);
+      console.log(dateControl.valueAsNumber);
       let date = document.getElementById("dateid").textContent;
       ddateimport= new Date(date);
       document.getElementById("datepick").value = formatDate(ddateimport);
