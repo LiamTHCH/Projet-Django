@@ -32,7 +32,7 @@ class AVM(ModelForm):
         'nom' : _("Nom du modéle")
         }
 
-class AV(forms.Form):
+class AV(forms.Form): #pas modlesForm a cause du multiplechoice fields
     modele = forms.MultipleChoiceField(choices=[(c.id,c.nom) for c in models.AvionModele.objects.all()])
     code_avion = forms.CharField()
     escadron = forms.MultipleChoiceField(choices=[(c.id, str(c.nom)) for c in models.Escadron.objects.all()])

@@ -49,19 +49,20 @@
    
    
      <script>
-      let dateControl = document.querySelector('input[type="date"]');
-      dateControl.value = new Date();
-      console.log(dateControl.value);
-      console.log(dateControl.valueAsNumber);
-      let date = document.getElementById("dateid").textContent;
-      ddateimport= new Date(date);
-      document.getElementById("datepick").value = formatDate(ddateimport);
-      console.log(ddateimport);
+      let dateControl = document.querySelector('input[type="date"]');   /* selecteur pour la date*/
+      dateControl.value = new Date(); /*Mettre le selecteur a la date actuelle*/
+      console.log(dateControl.value); /*Debug*/
+      console.log(dateControl.valueAsNumber);/*Debug*/
+      let date = document.getElementById("dateid").textContent;/*Recupere la date de modification dans le paragraphe invisible*/
+      ddateimport= new Date(date); /*cree la date popur la modification*/
+      document.getElementById("datepick").value = formatDate(ddateimport); /*change la date dans le selecteur avec le bon format*/
+      console.log(ddateimport);/*Debug*/
 
+      /* Fonction pour aun 0 a la date si neccesaire */
       function padTo2Digits(num) {
   return num.toString().padStart(2, '0');
 }
-
+      /*Fonction pour changer le format de la date en  Y/M/D   */
       function formatDate(date) {
         return [
           padTo2Digits(date.getFullYear()),
