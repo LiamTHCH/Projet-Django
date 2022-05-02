@@ -30,7 +30,7 @@
             </li>
             <li class="items">
                 <img src="{% static 'patch.svg' %}" alt="icone" class="icone">
-                <p class="txt-liste">Escadron</p>
+                <p class="txt-liste"><a href="/show/es">Escadron</a></p>
                 <ul class="sous-liste">
                     <a href="/show/es"><li class="titre-sous-liste t2">Escadron</li></a>
                     {% for escadre in ES %}
@@ -42,7 +42,7 @@
             </li>
             <li class="items">
                 <img src="{% static 'avion.svg' %}" alt="icone" class="icone">
-                <p class="txt-liste">Avion</p>
+                <p class="txt-liste"><a href="/show/av">Avion</a></p>
                 <ul class="sous-liste">
                     <a href="/show/av"><li class="titre-sous-liste t3">Avion</li></a>
                     {% for avion in AV %}
@@ -54,7 +54,7 @@
             </li>
             <li class="items">
                 <img src="{% static 'blueprint.svg' %}" alt="icone" class="icone">
-                <p class="txt-liste">Modele</p>
+                <p class="txt-liste"><a href="/show/avm">Modele</a></p>
                 <ul class="sous-liste">
                     <a href="/show/avm"><li class="titre-sous-liste t4">Modele Avion</li></a>
                     {% for avm in AVM %}
