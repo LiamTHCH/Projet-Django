@@ -22,3 +22,6 @@ path('up/avm/<int:id>',views.update_avm),
 path('del/av/<int:id>',views.del_av),
 path('up/av/<int:id>',views.update_av)
 ]
+
+handler404 = views.handler404 #ajout de la page 404
+handler500 = views.handler500#ajout de la page 500

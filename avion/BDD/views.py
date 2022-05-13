@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from .forms import *
 from . import models
 from django.forms.models import model_to_dict
+from django.template import RequestContext
 # Create your views here.
 def index(request):
     ba = models.Base.objects.all() # queryset pour le squellete
@@ -263,3 +264,15 @@ def update_av(request,id):
             temp.save()
             return HttpResponseRedirect('/show/av')
     return render(request, 'av_update.html', {'form': form,"BA" : ba,"ES" : es,"AV" : av,"AVM" : avm,'ID':id,'date':data["date_service"]}) #request avec toutes les infos et le formulaire plus injection de la date a cause du selecteur
+
+def handler404(request, *args, **argv): ##prend en compte le ereurs 404
+    response = render('404.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+def handler500(request, *args, **argv):##prend en compte le ereurs 500
+    response = render('500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
